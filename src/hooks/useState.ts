@@ -6,7 +6,7 @@ import { ref, type Ref } from 'vue';
  * @param initialState 初始化状态，可以是任意类型
  * @returns 返回一个状态对象和一个更新状态的函数
  */
-const useState = <T>(initialState: T) => {
+const useState = <T extends any>(initialState: T) => {
   const state = ref<T>(initialState);
 
   const updateState = (newState: T | ((prevState: T) => T)) => {
