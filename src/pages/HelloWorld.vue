@@ -2,15 +2,19 @@
 interface Props{
   msg:string
 }
-import { ref,withDefaults,onMounted} from 'vue'
+import { withDefaults,onMounted} from 'vue'
 import vueIcon from '@images/vue.svg';
 import {Button} from 'ant-design-vue';
 import request from '@/service/request'
+import {useState} from '@/hooks'
  withDefaults(defineProps<Props>(), {
   msg: 'hello vue '
 })
 
-const count = ref(0)
+const [count,setCount]=useState(0)
+const add=()=>{
+  setCount(prev => prev + 1);
+}
 onMounted(()=>{
   request.post('123',{a:1})
 })
@@ -20,7 +24,7 @@ onMounted(()=>{
   <h1>{{ msg }}</h1>
   <img :src='vueIcon' alt="">
   <div class="card">
-    <Button type="primary" @click="count++">count is {{ count }}</Button>
+    <Button type="primary" @click="add">count is {{ count }}</Button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
