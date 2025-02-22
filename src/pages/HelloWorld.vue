@@ -29,6 +29,7 @@ onMounted(()=>{
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
+    <RouterLink to="/test">Go to test</RouterLink>
   </div>
 
  

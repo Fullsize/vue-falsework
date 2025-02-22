@@ -1,0 +1,17 @@
+<script setup lang="ts">
+  import {useSetState} from '@/hooks';
+  import {Button} from 'ant-design-vue'
+  const defaultValue={a:1,b:2}
+  const [state,setState]=useSetState(defaultValue)
+
+</script>
+<template>
+  <div>
+    <h1>test</h1>
+    <p>默认值为{{ defaultValue }}</p>
+    <p>当前值为{{ state }}</p>
+    <Button type="primary" @click="()=>{setState({a:2})}">a为2</Button>
+    <Button type="primary" @click="()=>{setState({b:1})}">b为1</Button>
+    <Button type="primary" @click="()=>{setState(defaultValue)}">重制</Button>
+  </div>
+</template>
