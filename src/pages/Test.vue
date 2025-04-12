@@ -1,9 +1,8 @@
 <script setup lang="ts">
-  import {useSetState} from '@/hooks';
-  import {Button} from 'ant-design-vue'
-  const defaultValue={a:1,b:1}
-  const [state,setState]=useSetState(defaultValue)
-
+import { useSetState } from "@/hooks";
+import { Button } from "ant-design-vue";
+const defaultValue = { a: 1, b: 1 };
+const [state, setState] = useSetState(defaultValue);
 </script>
 <template>
   <div>
@@ -14,10 +13,34 @@
     <!-- <Button type="primary" @click="()=>{setState((prev)=>({
       ...prev,
       a:prev.a+1
-    }))}">点击a+1</Button> -->
-    <Button type="primary" @click="()=>{setState({a:state.a+1})}">点击a+1</Button>
-    <Button type="primary" @click="()=>{setState({b:state.b+1})}">点击b+1</Button>
-    <Button type="primary" @click="()=>{setState(defaultValue)}">重制</Button>
+    }))}">点击 a+1</Button> -->
+    <Button
+      type="primary"
+      @click="
+        () => {
+          setState({ a: state.a + 1 });
+        }
+      "
+      >点击a+1</Button
+    >
+    <Button
+      type="primary"
+      @click="
+        () => {
+          setState({ b: state.b + 1 });
+        }
+      "
+      >点击b+1</Button
+    >
+    <Button
+      type="primary"
+      @click="
+        () => {
+          setState(defaultValue);
+        }
+      "
+      >重制</Button
+    >
   </div>
 </template>
 <style scoped></style>

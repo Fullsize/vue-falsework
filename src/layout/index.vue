@@ -18,6 +18,6 @@ import Heder from "@/components/Heder.vue";
   align-items: center;
 }
 .content {
-  width: 500px;
+  width: 1400px;
 }
 </style>

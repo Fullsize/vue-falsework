@@ -4,10 +4,15 @@ import Proxy from "@/pages/Proxy.vue";
 import Login from "@/pages/Login.vue";
 import Admin from "@/pages/Admin.vue";
 import Forbidden from "@/pages/Forbidden.vue";
+import UserManagement from "@/pages/UserManagement.vue";
+import SystemSettings from "@/pages/SystemSettings.vue";
+import LogViewer from "@/pages/LogViewer.vue";
+
 export interface Meta {
   requiresAuth?: boolean;
   requireRole?: string[];
 }
+
 export default [
   {
     path: "/",
@@ -17,7 +22,9 @@ export default [
     },
   },
   {
-    path: "/test", component: Test, meta: {
+    path: "/test",
+    component: Test,
+    meta: {
       requiresAuth: true,
     },
   },
@@ -35,6 +42,30 @@ export default [
   {
     path: '/admin',
     component: Admin,
+    meta: {
+      requiresAuth: true,
+      requireRole: ["admin"],
+    },
+  },
+  {
+    path: '/admin/users',
+    component: UserManagement,
+    meta: {
+      requiresAuth: true,
+      requireRole: ["admin"],
+    },
+  },
+  {
+    path: '/admin/settings',
+    component: SystemSettings,
+    meta: {
+      requiresAuth: true,
+      requireRole: ["admin"],
+    },
+  },
+  {
+    path: '/admin/logs',
+    component: LogViewer,
     meta: {
       requiresAuth: true,
       requireRole: ["admin"],
