@@ -23,7 +23,7 @@ const handleLogin = () => {
   <div class="login">
     <div class="login-form">
       <h1>登录</h1>
-      <p>当用户为abc123时，角色为admin</p>
+      <p>当用户为 abc123 时，角色为 admin</p>
       <Input v-model:value="username" placeholder="用户名" />
 
       <Input v-model:value="password" type="password" placeholder="密码" />
