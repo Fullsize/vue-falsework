@@ -1,5 +1,5 @@
 import HomeView from "@/pages/HelloWorld.vue";
-import Test from "@/pages/Test.vue";
+import Test from "@/pages/Test";
 import Proxy from "@/pages/Proxy.vue";
 import Login from "@/pages/Login.vue";
 import Admin from "@/pages/Admin.vue";

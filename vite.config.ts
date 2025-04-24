@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
 import path from 'path';
 import image from '@rollup/plugin-image'
@@ -18,7 +19,7 @@ export default defineConfig({
       '@images': path.resolve(__dirname, 'src/assets/images')
     }
   },
-  plugins: [vue(), image(), legacy({
+  plugins: [vue(), vueJsx(), image(), legacy({
     targets: ['defaults', 'not IE 11'],
   }),],
 })
